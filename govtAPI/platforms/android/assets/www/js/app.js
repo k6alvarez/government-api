@@ -1,0 +1,82 @@
+ // create the module and name it govtAPI
+ 	// also include ngRoute for all our routing needs
+    var govtAPI = angular.module('govtAPI', ['ngRoute','ngAnimate']);
+
+    // configure our routes
+    govtAPI.config(function($routeProvider) {
+        $routeProvider
+
+            // route for the home page
+            .when('/', {
+                templateUrl : 'views/home.html',
+                controller  : 'mainController'
+            })
+
+            .when('/home', {
+                templateUrl : 'views/home.html',
+                controller  : 'mainController'
+            })
+
+            .when('/enacted-laws', {
+                templateUrl : 'views/enacted-laws.html',
+                controller  : 'enactedController'
+            })
+
+            .when('/bill/:id', {
+                templateUrl : 'views/bill.html',
+                controller  : 'billViewController'
+            })
+            // route for the about page
+            .when('/about', {
+                templateUrl : 'views/about.html',
+                controller  : 'aboutController'
+            })
+
+            // route for the contact page
+            .when('/contact', {
+                templateUrl : 'views/contact.html',
+                controller  : 'contactController'
+            });
+    });
+
+
+     // create the controller and inject Angular's $scope
+    govtAPI.controller('mainController', function($scope,$http,$routeParams) {
+        
+    });
+
+    govtAPI.controller('enactedController', function($scope,$http,$routeParams) {
+        // create a message to display in our view
+        $scope.message = 'Enacted laws passed during current session of Congress';
+        $scope.names = null;
+        $http.get("https://www.govtrack.us/api/v2/bill?congress=114&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
+    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    });
+
+    govtAPI.controller('billViewController', function($scope,$http,$routeParams) {
+        // create a message to display in our view
+        $scope.message = 'Individual Bill View';
+        console.log('test');
+        $scope.bill = null;
+        console.log($routeParams.id);
+   //      $scope.$on('$routeChangeStart', function(next, current) { 
+		 //   console.log('test');
+		 // });
+
+        $http.get("https://www.govtrack.us/api/v2/bill/"+$routeParams.id+"")
+    		.success(function(response) {$scope.bill = response;console.log(response);});
+    });
+
+    govtAPI.controller('aboutController', function($scope,$http,$routeParams) {
+        $scope.message = 'Bills passed by the 113th congress';
+        $scope.names = null;
+        $http.get("https://www.govtrack.us/api/v2/bill?congress=113&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
+    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    });
+
+    govtAPI.controller('contactController', function($scope,$http,$routeParams) {
+        $scope.message = 'Bills passed by the 112th congress';
+        $scope.names = null;
+        $http.get("https://www.govtrack.us/api/v2/bill?congress=112&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
+    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    });

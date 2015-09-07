@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="govtAPI">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+
+
+    <!-- <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/angular-loading-bar/0.7.1/loading-bar.min.css' type='text/css' media='all' /> -->
+    <link href="css/index.css" rel="stylesheet">
+
+    <script src="lib/angular.min.js"></script>
+</head>
+<body>
+ 
+  <!-- MAIN CONTENT AND INJECTED VIEWS -->
+  <div id="main">
+      
+
+      <!-- angular templating -->
+      <!-- this is where content will be injected -->
+      <div ng-view class="view-animate" ng-cloak>
+        
+      </div>
+  </div>
+
+<script src="cordova.js"></script>
+<!-- <script src="lib/jquery.js"></script>
+<script src="lib/fastclick.js"></script> -->
+<script src="lib/angular-route.min.js"></script>
+<!-- <script src="lib/angular-loader.min.js"></script> -->
+<script src="lib/angular-animate.min.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

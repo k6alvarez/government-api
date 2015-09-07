@@ -1,0 +1,127 @@
+// @import "/reset";
+$usaBlue: #0052A5;
+$usaRed: #E0162B;
+body{
+	background: $usaBlue;
+	font-family: helvetica; 
+	color: #ffffff;
+	padding: 0;
+	margin: 0;
+}
+a{
+	color: #ffffff;
+	text-decoration: none;
+}
+header{
+	h1{
+		text-align: center;
+	}
+}
+.content  {
+	background: $usaRed;
+	font-size: 18px;
+}
+
+ul.nav{
+	background: $usaBlue + 25;
+	border-top: 5px solid $usaBlue + 25;
+	border-bottom: 5px solid $usaBlue + 25;
+	li{
+		margin: 0;		
+		a{
+			color: #fff;
+			background: $usaRed;
+			font-size: 24px;
+			margin: 3px 0 0 0;	
+			padding: 50px 0px; 
+			text-align: center;	
+			text-decoration: none;	
+			display: block;
+		}
+	}
+}
+
+ul{
+	list-style: none;	
+	padding: 0;
+	margin: 0;
+	li{
+		margin-bottom: 5px;
+		background: $usaBlue;
+		// border-top: 1px solid $usaRed;
+		// border-bottom: 1px solid $usaRed;
+		padding: 10px;
+	}
+}
+
+.laws{
+	li{
+
+
+	}
+}
+
+.wrap{
+	background: $usaBlue + 25;
+	position: relative;	
+	padding: 1% 0;
+	margin-bottom: 1%;
+	
+}
+h1,h2,h3,p,form{
+	padding: 0 2%;
+}
+.view-animate {
+  padding:0;
+}
+
+.view-animate.ng-enter, .view-animate.ng-leave {
+  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+  transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.2s;
+
+  display:block;
+  width:100%;
+
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:0;
+}
+
+.view-animate.ng-enter {
+  left:100%;
+}
+.view-animate.ng-enter.ng-enter-active {
+  left:0;
+}
+.view-animate.ng-leave.ng-leave-active {
+  left:-100%;
+}
+
+.read-more{
+	float:right;
+}
+
+
+button.yes,button.no{
+	background: $usaRed;
+	display: block;
+	width: 48%;
+	margin: 0 1%;
+	padding: 100px 0;
+	float: left;
+	text-align: center;
+	box-shadow: none;
+	outline: none;
+	border: none;
+	color: #ffffff;
+	font-size: 24px; 
+	cursor: pointer;
+}
+button.yes{
+}
+button.no{
+
+}
