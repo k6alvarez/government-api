@@ -41,11 +41,27 @@ ul {
     background: #0052A5;
     padding: 10px; }
 
+.laws {
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden; }
+  .laws li {
+    width: 98%;
+    float: left;
+    margin: 1% 0 0 1%;
+    padding: 0;
+    background: white;
+    color: #212121; }
+    .laws li a {
+      color: #212121; }
+
 .wrap {
   background: #196bbe;
   position: relative;
   padding: 1% 0;
   margin-bottom: 1%; }
+  .wrap .results-total {
+    float: right; }
 
 h1, h2, h3, p, form {
   padding: 0 2%; }
