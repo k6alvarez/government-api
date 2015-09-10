@@ -9,9 +9,9 @@
     </ul> -->
 	<p>{{ message }}<span class="results-total">{{ names.length }} laws total:</span></p>	
 	<ul class="laws">
-		<li ng-repeat="x in names">
+		<li ng-repeat="x in names | orderBy:'current_status_date':true">
 			<p>{{ x.title }}</p>	
-			<p><span>Signed on {{ x.current_status_date }}</span><span class="read-more"><a href="#bill/{{ x.id }}">Read More</a></span></p>						
+			<p><span>Signed on {{ x.current_status_date }}</span><span class="read-more"><a href="#bill/{{ x.id }}">Read More</a></span></p>									
 		</li>
 	</ul>
 

@@ -9,7 +9,7 @@ body{
 	margin: 0;
 }
 a{
-	color: #ffffff;
+	color: $usaRed;
 	text-decoration: none;
 }
 header{
@@ -55,8 +55,8 @@ ul{
 }
 
 .laws{
-	width: 90%;
-	margin-left: 5%;
+	width: 98%;
+	margin-left: 1%;
 	overflow: hidden;
 	li{
 		width: 98%;
@@ -67,7 +67,7 @@ ul{
 		background: white;
 		color: #212121;
 		a{
-			color: #212121;
+			// color: #212121;
 		}
 
 	}

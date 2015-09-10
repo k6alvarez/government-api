@@ -52,7 +52,7 @@
         $http.get("https://www.govtrack.us/api/v2/bill?congress=114&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
     		.success(function(response) {
                 $scope.names = response.objects;
-                // console.log(response.objects);
+                console.log(response.objects);
             });
     });
 
@@ -123,3 +123,9 @@
         $http.get("https://www.govtrack.us/api/v2/bill?congress=112&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
     		.success(function(response) {$scope.names = response.objects;});
     });
+
+
+
+
+
+

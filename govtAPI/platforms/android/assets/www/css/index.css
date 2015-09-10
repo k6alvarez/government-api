@@ -38,13 +38,33 @@ ul {
   margin: 0; }
   ul li {
     margin-bottom: 5px;
-    background: #196bbe;
+    background: #0052A5;
     padding: 10px; }
 
+.laws {
+  width: 90%;
+  margin-left: 5%;
+  overflow: hidden; }
+  .laws li {
+    width: 98%;
+    float: left;
+    margin: 1% 0 0 1%;
+    padding: 0;
+    background: white;
+    color: #212121; }
+    .laws li a {
+      color: #212121; }
+
 .wrap {
-  position: relative; }
-  .wrap h1, .wrap h2, .wrap h3, .wrap p {
-    padding: 0 2%; }
+  background: #196bbe;
+  position: relative;
+  padding: 1% 0;
+  margin-bottom: 1%; }
+  .wrap .results-total {
+    float: right; }
+
+h1, h2, h3, p, form {
+  padding: 0 2%; }
 
 .view-animate {
   padding: 0; }
@@ -73,11 +93,17 @@ ul {
 .read-more {
   float: right; }
 
-a.yes, a.no {
+button.yes, button.no {
   background: #E0162B;
   display: block;
   width: 48%;
   margin: 0 1%;
   padding: 100px 0;
   float: left;
-  text-align: center; }
+  text-align: center;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  color: #ffffff;
+  font-size: 24px;
+  cursor: pointer; }

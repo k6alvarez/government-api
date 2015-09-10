@@ -50,18 +50,61 @@
         $scope.message = 'Enacted laws passed during current session of Congress';
         $scope.names = null;
         $http.get("https://www.govtrack.us/api/v2/bill?congress=114&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
-    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    		.success(function(response) {
+                $scope.names = response.objects;
+                console.log(response.objects);
+            });
     });
+
+
+
+
+ //    govtAPI.controller('countVote', function ($scope) {
+	//     $scope.counterYes = 0;
+	//     $scope.counterNo = 0;
+	//     $scope.countYes = function (inc) {
+	//         $scope.counterYes += inc;
+	//     };
+	//     $scope.countNo = function (inc) {
+	//         $scope.counterNo += inc;
+	//     };
+
+	// });
+	govtAPI.controller('MyCtrl', function ($scope) {
+	    $scope.value= 'foo';
+	    
+	    $scope.newValue = function(value) {
+	       console.log(value);
+	    };
+	});
+
+	govtAPI.controller('formController', function($scope) {
+  
+        // we will store our form data in this object
+        $scope.formData = {};
+
+        // process the form
+	    $scope.processForm = function() {
+
+	    };
+        
+    }); 
 
     govtAPI.controller('billViewController', function($scope,$http,$routeParams) {
         // create a message to display in our view
         $scope.message = 'Individual Bill View';
         console.log('test');
         $scope.bill = null;
-        console.log($routeParams.id);
-   //      $scope.$on('$routeChangeStart', function(next, current) { 
+
+   		 //$scope.$on('$routeChangeStart', function(next, current) { 
 		 //   console.log('test');
 		 // });
+
+    	// $scope.counter = 0;
+	    // $scope.count = function (inc) {
+	    //     $scope.counter += inc;
+	    // };
+
 
         $http.get("https://www.govtrack.us/api/v2/bill/"+$routeParams.id+"")
     		.success(function(response) {$scope.bill = response;console.log(response);});
@@ -71,12 +114,18 @@
         $scope.message = 'Bills passed by the 113th congress';
         $scope.names = null;
         $http.get("https://www.govtrack.us/api/v2/bill?congress=113&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
-    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    		.success(function(response) {$scope.names = response.objects;});
     });
 
     govtAPI.controller('contactController', function($scope,$http,$routeParams) {
         $scope.message = 'Bills passed by the 112th congress';
         $scope.names = null;
         $http.get("https://www.govtrack.us/api/v2/bill?congress=112&current_status__in=enacted_signed|enacted_veto_override|enacted_tendayrule")
-    		.success(function(response) {$scope.names = response.objects;console.log(response.objects);});
+    		.success(function(response) {$scope.names = response.objects;});
     });
+
+
+
+
+
+

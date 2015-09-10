@@ -6,7 +6,7 @@ body {
   margin: 0; }
 
 a {
-  color: #ffffff;
+  color: #E0162B;
   text-decoration: none; }
 
 header h1 {
@@ -42,8 +42,8 @@ ul {
     padding: 10px; }
 
 .laws {
-  width: 90%;
-  margin-left: 5%;
+  width: 98%;
+  margin-left: 1%;
   overflow: hidden; }
   .laws li {
     width: 98%;
@@ -52,8 +52,6 @@ ul {
     padding: 0;
     background: white;
     color: #212121; }
-    .laws li a {
-      color: #212121; }
 
 .wrap {
   background: #196bbe;
