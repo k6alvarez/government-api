@@ -61,6 +61,10 @@ ul {
   .wrap .results-total {
     float: right; }
 
+iframe {
+  width: 100%;
+  height: 600px; }
+
 h1, h2, h3, p, form {
   padding: 0 2%; }
 

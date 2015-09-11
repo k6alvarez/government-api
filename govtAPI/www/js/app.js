@@ -90,24 +90,22 @@
         
     }); 
 
-    govtAPI.controller('billViewController', function($scope,$http,$routeParams) {
+    govtAPI.controller('billViewController', function($scope,$http,$routeParams,$sce) {
         // create a message to display in our view
         $scope.message = 'Individual Bill View';
-        console.log('test');
+        // console.log('test');
         $scope.bill = null;
 
-   		 //$scope.$on('$routeChangeStart', function(next, current) { 
-		 //   console.log('test');
-		 // });
-
-    	// $scope.counter = 0;
-	    // $scope.count = function (inc) {
-	    //     $scope.counter += inc;
-	    // };
-
-
         $http.get("https://www.govtrack.us/api/v2/bill/"+$routeParams.id+"")
-    		.success(function(response) {$scope.bill = response;console.log(response);});
+    		.success(function(response) {
+                $scope.trustSrc = function(src) {
+                    return $sce.trustAsResourceUrl(src);
+                }
+                $scope.movie = {src: response.link+"/text#main_text_content", title:"Source: www.govtrack.us"};
+                console.log(response);
+                $scope.bill = response;
+            });
+
     });
 
     govtAPI.controller('aboutController', function($scope,$http,$routeParams) {
